@@ -15,7 +15,7 @@ import com.badran.currencyconverter.base.BaseFragment;
 import com.badran.currencyconverter.base.BaseNetworkViewModel;
 import com.badran.currencyconverter.base.BaseRecyclerViewAdapter;
 import com.badran.currencyconverter.base.BaseViewHolder;
-import com.badran.currencyconverter.dashboard.fragmentrates.viewholders.RvRatesAdapter;
+import com.badran.currencyconverter.dashboard.fragmentrates.adapters.RvRatesAdapter;
 import com.badran.currencyconverter.dashboard.fragmentrates.viewholders.RvViewHolderRates;
 import com.badran.currencyconverter.databinding.FragmentRatesBinding;
 import com.badran.currencyconverter.di.annotations.ActivityScoped;

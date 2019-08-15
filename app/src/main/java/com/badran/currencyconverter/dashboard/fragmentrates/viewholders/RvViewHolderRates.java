@@ -19,7 +19,7 @@ public class RvViewHolderRates extends BaseViewHolderKnife implements ContractRa
     private ContractRates.Presenter presenter;
 
 
-    RvViewHolderRates(@NonNull View itemView) {
+    public RvViewHolderRates(@NonNull View itemView) {
         super(itemView);
         itemCurrencyBinding = DataBindingUtil.bind(itemView);
         itemView.setOnClickListener(this::onClick);

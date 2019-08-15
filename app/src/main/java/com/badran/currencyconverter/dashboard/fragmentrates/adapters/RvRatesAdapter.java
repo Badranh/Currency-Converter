@@ -1,4 +1,4 @@
-package com.badran.currencyconverter.dashboard.fragmentrates.viewholders;
+package com.badran.currencyconverter.dashboard.fragmentrates.adapters;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 
 import com.badran.currencyconverter.R;
 import com.badran.currencyconverter.base.BaseRecyclerViewAdapter;
+import com.badran.currencyconverter.dashboard.fragmentrates.viewholders.RvViewHolderRates;
 
 public class RvRatesAdapter extends BaseRecyclerViewAdapter<RvViewHolderRates> {
 
