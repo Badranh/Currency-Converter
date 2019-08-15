@@ -18,5 +18,5 @@ DiffUtil was considered but it wasn't so useful in our case<br>
 AppConsts java file that contains App Constants such as : link,Initial starting amount,Initial Currency,API refresh rate<br>
 Custom Scopes were used ( Fragments and their dependcies are locally scoped )<br>
 Some dependencies were App Scoped<br>
-
+Progaurd rules added so app is ready for production
 
