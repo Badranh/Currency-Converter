@@ -1,7 +1,7 @@
 package com.badran.currencyconverter.di.modules;
 
 
-import com.badran.currencyconverter.MainActivity;
+import com.badran.currencyconverter.dashboard.MainActivity;
 import com.badran.currencyconverter.di.annotations.ActivityScoped;
 import com.badran.currencyconverter.di.submodules.MainSubModules;
 

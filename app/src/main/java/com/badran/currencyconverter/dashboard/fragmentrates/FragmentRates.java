@@ -1,23 +1,24 @@
-package com.badran.currencyconverter.fragmentrates;
+package com.badran.currencyconverter.dashboard.fragmentrates;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.badran.currencyconverter.R;
 import com.badran.currencyconverter.base.BaseFragment;
 import com.badran.currencyconverter.base.BaseNetworkViewModel;
 import com.badran.currencyconverter.base.BaseRecyclerViewAdapter;
 import com.badran.currencyconverter.base.BaseViewHolder;
+import com.badran.currencyconverter.dashboard.fragmentrates.viewholders.RvRatesAdapter;
+import com.badran.currencyconverter.dashboard.fragmentrates.viewholders.RvViewHolderRates;
 import com.badran.currencyconverter.databinding.FragmentRatesBinding;
 import com.badran.currencyconverter.di.annotations.ActivityScoped;
-import com.badran.currencyconverter.fragmentrates.viewholders.RvRatesAdapter;
-import com.badran.currencyconverter.fragmentrates.viewholders.RvViewHolderRates;
 import com.badran.currencyconverter.utils.UIHelpers;
 
 import javax.inject.Inject;
@@ -37,6 +38,9 @@ public class FragmentRates extends BaseFragment<FragmentRatesBinding> implements
 
     private  LinearLayoutManager llm;
 
+    @Inject
+    public FragmentRates() {
+    }
 
     @Override
     protected int LayoutRes() {
@@ -102,6 +106,7 @@ public class FragmentRates extends BaseFragment<FragmentRatesBinding> implements
     private void loadRatesRv() {
         baseRecyclerViewAdapter = new RvRatesAdapter();
         recyclerView = new RecyclerView(getBaseActivity());
+        recyclerView.setFocusable(false);
         uiHelpers.setupRecycler(recyclerView,baseRecyclerViewAdapter,(BaseViewHolder.Binder<RvViewHolderRates>) presenter,RvViewHolderRates.class,R.layout.item_currency);
         //oh no, my eyes please section
         recyclerView.setItemAnimator(null);

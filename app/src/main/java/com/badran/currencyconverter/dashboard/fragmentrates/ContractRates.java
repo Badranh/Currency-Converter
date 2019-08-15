@@ -1,10 +1,8 @@
-package com.badran.currencyconverter.fragmentrates;
+package com.badran.currencyconverter.dashboard.fragmentrates;
 
 import androidx.databinding.ViewDataBinding;
-import androidx.recyclerview.widget.DiffUtil;
-import com.badran.currencyconverter.databinding.ItemCurrencyBinding;
+
 import io.reactivex.Observable;
-import io.reactivex.disposables.Disposable;
 
 public interface ContractRates {
     interface View{

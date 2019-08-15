@@ -2,25 +2,19 @@ package com.badran.currencyconverter.data.API;
 
 import android.util.Log;
 
-import com.badran.currencyconverter.data.model.Rates;
 import com.badran.currencyconverter.data.model.Requests.RatesRequest;
 
 import org.reactivestreams.Publisher;
 
 import java.util.concurrent.TimeUnit;
 
-import javax.inject.Inject;
-
 import io.reactivex.Flowable;
-import io.reactivex.Observable;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.functions.BiFunction;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subscribers.DisposableSubscriber;
-import kotlin.jvm.functions.Function2;
 
 import static com.badran.currencyconverter.AppConstants.API_REFRESH_RATE;
 

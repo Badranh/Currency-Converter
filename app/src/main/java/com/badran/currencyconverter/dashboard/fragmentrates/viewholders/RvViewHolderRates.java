@@ -1,17 +1,15 @@
-package com.badran.currencyconverter.fragmentrates.viewholders;
+package com.badran.currencyconverter.dashboard.fragmentrates.viewholders;
 
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import com.badran.currencyconverter.base.BaseViewHolderKnife;
-import com.badran.currencyconverter.databinding.ItemCurrencyFirstBinding;
-import com.badran.currencyconverter.fragmentrates.ContractRates;
-import com.jakewharton.rxbinding3.view.RxView;
-import com.jakewharton.rxbinding3.widget.RxTextView;
 
-import java.util.concurrent.TimeUnit;
+import com.badran.currencyconverter.base.BaseViewHolderKnife;
+import com.badran.currencyconverter.dashboard.fragmentrates.ContractRates;
+import com.badran.currencyconverter.databinding.ItemCurrencyFirstBinding;
+import com.jakewharton.rxbinding3.widget.RxTextView;
 
 import io.reactivex.Observable;
 
@@ -21,7 +19,7 @@ public class RvViewHolderRates extends BaseViewHolderKnife implements ContractRa
     private ContractRates.Presenter presenter;
 
 
-    public RvViewHolderRates(@NonNull View itemView) {
+    RvViewHolderRates(@NonNull View itemView) {
         super(itemView);
         itemCurrencyBinding = DataBindingUtil.bind(itemView);
         itemView.setOnClickListener(this::onClick);

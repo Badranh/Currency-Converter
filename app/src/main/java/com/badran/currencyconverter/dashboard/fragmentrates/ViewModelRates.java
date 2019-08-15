@@ -1,4 +1,4 @@
-package com.badran.currencyconverter.fragmentrates;
+package com.badran.currencyconverter.dashboard.fragmentrates;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -16,12 +16,12 @@ public class ViewModelRates extends BaseNetworkViewModel {
     public ViewModelRates() {
     }
 
-    public void setNotifyItemMoved(Integer val){
+    void setNotifyItemMoved(Integer val) {
         notifyItemMoved.setValue(val);
     }
 
 
-    public LiveData<Integer> getItemMoved() {
+    LiveData<Integer> getItemMoved() {
         return notifyItemMoved;
     }
 }

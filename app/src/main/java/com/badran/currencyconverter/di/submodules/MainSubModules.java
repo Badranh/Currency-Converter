@@ -1,9 +1,9 @@
 package com.badran.currencyconverter.di.submodules;
 
+import com.badran.currencyconverter.dashboard.fragmentrates.ContractRates;
+import com.badran.currencyconverter.dashboard.fragmentrates.FragmentRates;
+import com.badran.currencyconverter.dashboard.fragmentrates.PresenterRates;
 import com.badran.currencyconverter.di.annotations.ActivityScoped;
-import com.badran.currencyconverter.fragmentrates.ContractRates;
-import com.badran.currencyconverter.fragmentrates.FragmentRates;
-import com.badran.currencyconverter.fragmentrates.PresenterRates;
 
 import dagger.Binds;
 import dagger.Module;

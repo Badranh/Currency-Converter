@@ -1,8 +1,10 @@
-package com.badran.currencyconverter.fragmentrates.viewholders;
+package com.badran.currencyconverter.dashboard.fragmentrates.viewholders;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
+
 import com.badran.currencyconverter.R;
 import com.badran.currencyconverter.base.BaseRecyclerViewAdapter;
 
@@ -18,6 +20,7 @@ public class RvRatesAdapter extends BaseRecyclerViewAdapter<RvViewHolderRates> {
     }
 
     //we have 2 view types, first cell and the rest
+    //we can do it with 1 type by converting edit text into textView, but in this approach it  will be highly customizable for future development
     @Override
     public int getItemViewType(int position) {
         if (position == 0) return 1;
