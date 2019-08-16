@@ -67,23 +67,32 @@ public class PresenterRates implements ContractRates.Presenter, BaseViewHolder.B
 
     @Override
     public void bindViewHolders(ContractRates.ViewHolderRates viewHolderRates,int pos) {
-        final String currencyName = (String) rates.getRates().keySet().toArray()[pos];
         if(pos==0){
-            ((ItemCurrencyFirstBinding)viewHolderRates.getBinding()).tvCurrencyName.setText(CHOSEN_BASE);
-            ((ItemCurrencyFirstBinding)viewHolderRates.getBinding()).edtMain.setText(String.valueOf(amount));
-            disposable.add(viewHolderRates.observeValue().subscribe(aDouble -> {
-                if (!amount.equals(aDouble)) {
-                    amount = aDouble;
-                    reset();
-                }
-            }));
+            bindFirstHolder(((ItemCurrencyFirstBinding) viewHolderRates.getBinding()), viewHolderRates);
         }else {
-            ((ItemCurrencyBinding)viewHolderRates.getBinding()).tvCurrencyName.setText(currencyName);
-            Double total= (Double.valueOf(rates.getRates().get(currencyName)) * amount);
-            ((ItemCurrencyBinding)viewHolderRates.getBinding()).edtValue.setCurrentText(String.valueOf(df2.format(total)));
-            ((ItemCurrencyBinding) viewHolderRates.getBinding()).edtValue.setCurrentText(String.valueOf(df2.format(total)));
+            bindOthers(((ItemCurrencyBinding) viewHolderRates.getBinding()), pos);
         }
         viewHolderRates.setPresenter(this);
+    }
+
+
+    private void bindFirstHolder(ItemCurrencyFirstBinding itemCurrencyFirstBinding, ContractRates.ViewHolderRates viewHolderRates) {
+        itemCurrencyFirstBinding.tvCurrencyName.setText(CHOSEN_BASE);
+        itemCurrencyFirstBinding.edtMain.setText(String.valueOf(amount));
+        disposable.add(viewHolderRates.observeValue().subscribe(aDouble -> {
+            if (!amount.equals(aDouble)) {
+                amount = aDouble;
+                reset();
+            }
+        }));
+    }
+
+    private void bindOthers(ItemCurrencyBinding itemCurrencyBinding, int pos) {
+        final String currencyName = (String) rates.getRates().keySet().toArray()[pos];
+        itemCurrencyBinding.tvCurrencyName.setText(currencyName);
+        Double total = (Double.valueOf(rates.getRates().get(currencyName)) * amount);
+        itemCurrencyBinding.edtValue.setCurrentText(String.valueOf(df2.format(total)));
+        itemCurrencyBinding.edtValue.setCurrentText(String.valueOf(df2.format(total)));
     }
 
     @Override

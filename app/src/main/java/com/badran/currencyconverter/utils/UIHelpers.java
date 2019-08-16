@@ -1,6 +1,9 @@
 package com.badran.currencyconverter.utils;
 
+import android.content.Context;
+
 import androidx.annotation.LayoutRes;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.badran.currencyconverter.base.BaseRecyclerViewAdapter;
@@ -15,4 +18,10 @@ public class UIHelpers {
         recyclerView.setAdapter(baseRecyclerViewAdapter);
     }
 
+    public LinearLayoutManager makeItVertical(Context context, RecyclerView recyclerView) {
+        LinearLayoutManager llm = new LinearLayoutManager(context);
+        llm.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(llm);
+        return llm;
+    }
 }

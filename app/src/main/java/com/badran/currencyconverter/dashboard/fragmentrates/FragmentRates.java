@@ -89,7 +89,7 @@ public class FragmentRates extends BaseFragment<FragmentRatesBinding> implements
     private void initObs() {
         initObservers();
         viewModelRates.getItemMoved().observe(getViewLifecycleOwner(),aBoolean -> {
-            if(aBoolean!=null){
+            if (aBoolean != null && recyclerView.getAdapter() != null) {
                 baseRecyclerViewAdapter.notifyItemMoved(aBoolean,0);
                 llm.scrollToPosition(0);
             }
@@ -106,15 +106,10 @@ public class FragmentRates extends BaseFragment<FragmentRatesBinding> implements
     private void loadRatesRv() {
         baseRecyclerViewAdapter = new RvRatesAdapter();
         recyclerView = new RecyclerView(getBaseActivity());
-        recyclerView.setFocusable(false);
-        uiHelpers.setupRecycler(recyclerView,baseRecyclerViewAdapter,(BaseViewHolder.Binder<RvViewHolderRates>) presenter,RvViewHolderRates.class,R.layout.item_currency);
-        //oh no, my eyes please section
-        recyclerView.setItemAnimator(null);
-        //
-        llm = new LinearLayoutManager(getContext());
-        llm.setOrientation(RecyclerView.VERTICAL);
-        recyclerView.setLayoutManager(llm);
         recyclerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        uiHelpers.setupRecycler(recyclerView,baseRecyclerViewAdapter,(BaseViewHolder.Binder<RvViewHolderRates>) presenter,RvViewHolderRates.class,R.layout.item_currency);
+        llm = uiHelpers.makeItVertical(getContext(), recyclerView);
+        recyclerView.setItemAnimator(null);
         binding.root.addView(recyclerView);
     }
 
