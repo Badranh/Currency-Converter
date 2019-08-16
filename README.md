@@ -1,4 +1,5 @@
 # Currency-Converter
+![Screenshot](https://i.ibb.co/BfWbRnL/Screen-Shot-2019-08-16-at-15-10-49.png)
 
 ## Overview:
 Pattern used: MVPVM<br>
@@ -19,4 +20,5 @@ AppConsts java file that contains App Constants such as : link,Initial starting 
 Custom Scopes were used ( Fragments and their dependcies are locally scoped )<br>
 Some dependencies were App Scoped<br>
 Progaurd rules added so app is ready for production
+
 
